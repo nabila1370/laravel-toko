@@ -11,11 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produk', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+       Schema::create('produk', function (Blueprint $table) {
+        $table->id();
+        $table->string('nama_produk');
+        $table->string('kategori');
+        $table->decimal('harga_satuan', 10, 2);
+        $table->integer('stok');
+        $table->string('satuan');
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.
